@@ -1,0 +1,7 @@
+{
+  "name": "meduvendor",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
