@@ -1,0 +1,126 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Ionic Angular App
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- One Ion Card -->
+  <ion-card>
+    <ion-card-header>
+      Single Card
+    </ion-card-header>
+    <ion-card-content class="ion-text-center">
+      <!-- Circular profile photo -->
+      <div class="profile-photo">
+        <img src="path_to_your_photo" alt="Profile Photo" />
+      </div>
+      <!-- Text "My Business" -->
+      <h2>My Business</h2>
+      <!-- Edit button -->
+      <ion-button expand="block" color="primary">Edit</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Three Ion Cards in one line -->
+  <ion-row>
+    <ion-col size="4">
+      <ion-card>
+        <ion-card-header>
+          Card 1
+        </ion-card-header>
+        <ion-card-content>
+          Content for Card 1
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+    <ion-col size="4">
+      <ion-card>
+        <ion-card-header>
+          Card 2
+        </ion-card-header>
+        <ion-card-content>
+          Content for Card 2
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+    <ion-col size="4">
+      <ion-card>
+        <ion-card-header>
+          Card 3
+        </ion-card-header>
+        <ion-card-content>
+          Content for Card 3
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+  <!-- Two Ion Cards in one line -->
+  <ion-row>
+    <ion-col size="6">
+      <ion-card>
+        <ion-card-header>
+          Card 4
+        </ion-card-header>
+        <ion-card-content>
+          Content for Card 4
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+    <ion-col size="6">
+      <ion-card>
+        <ion-card-header>
+          Card 5
+        </ion-card-header>
+        <ion-card-content>
+          Content for Card 5
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+  <ion-accordion-group>
+    <ion-accordion value="first">
+      <ion-item slot="header" color="LIGHT">
+        <ion-icon slot="start" name="settings"></ion-icon>
+        <ion-label>Setting</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">SMS Settings</div>
+      <div class="ion-padding" slot="content">Payment Settings</div>
+      <div class="ion-padding" slot="content">Recycle Bin</div>
+      <div class="ion-padding" slot="content">App Lock</div>
+      <div class="ion-padding" slot="content">Language</div>
+      <div class="ion-padding" slot="content">Backup Information</div>
+      <div class="ion-padding" slot="content">Backup Information</div>
+      <div class="ion-padding" slot="content">Backup Information</div>
+    </ion-accordion>
+    <ion-accordion value="second">
+      <ion-item slot="header" color="Light"><ion-icon slot="start" name="help-circle"></ion-icon>
+        <ion-label>Help & Support</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">FAQs</div>
+      <div class="ion-padding" slot="content">Help on WhatsApp</div>
+      <div class="ion-padding" slot="content">Call Us</div>
+    </ion-accordion>
+    <ion-accordion value="third">
+      <ion-item slot="header" color="LIGHT"><ion-icon slot="start" name="information-circle"></ion-icon>
+        <ion-label>About Us</ion-label>
+
+      </ion-item>
+      <div class="ion-padding" slot="content">About Khatabook</div>
+      <div class="ion-padding" slot="content">Privacy Policy</div>
+      <div class="ion-padding" slot="content">Terms & Conditions</div>
+      <div class="ion-padding" slot="content">Third Content</div>
+    </ion-accordion>
+  </ion-accordion-group>
+  <ion-card>
+    <ion-card-header>
+      Second Card
+    </ion-card-header>
+    <ion-card-content>
+      Content for Single Card
+    </ion-card-content>
+  </ion-card>

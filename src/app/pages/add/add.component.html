@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Add Party</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="partyForm">
+    <ion-item>
+      <ion-input label="Party Name" label-placement="floating" fill="outline"
+        placeholder="Enter party name"></ion-input> </ion-item>
+    <ion-item>
+      <ion-input formControlName="mobileNumber" placeholder="Enter mobile number" label-placement="floating"
+        fill="outline">
+        <!-- Default country code -->
+        <ion-icon name="flag" slot="start"></ion-icon>
+        <!-- Country code input -->
+        <ion-input formControlName="countryCode" placeholder="+91" [disabled]="true"></ion-input>
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Who are they?</ion-label>
+      <ion-radio-group formControlName="partyType">
+        <ion-row>
+          <ion-col>
+            <ion-label>Customer</ion-label>
+            <ion-radio value="customer"></ion-radio>
+          </ion-col>
+          <ion-col>
+            <ion-label>Supplier</ion-label>
+            <ion-radio value="supplier"></ion-radio>
+          </ion-col>
+        </ion-row>
+      </ion-radio-group>
+
+    </ion-item>
+
+
+    <!-- Optional GSTIN & Address Section -->
+    <ion-item>
+      <ion-label>+ADD GSTIN & ADDRESS (OPTIONAL)</ion-label>
+      <ion-button slot="end" fill="clear" (click)="toggleOptionalFields()">
+        {{ showOptionalFields ? 'Hide' : 'Show' }}
+      </ion-button>
+    </ion-item>
+    <ion-item *ngIf="showOptionalFields">
+
+      <ion-input label="gstin number" label-placement="floating" fill="outline" placeholder="Enter GSTIN"></ion-input>
+    </ion-item>
+    <!-- Billing Address Fields -->
+    <ion-item *ngIf="showOptionalFields">
+      <ion-input label="Billing Address" label-placement="floating" fill="outline"
+        placeholder="Flat/Building Number"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="showOptionalFields">
+
+      <ion-input label="Locality" label-placement="floating" fill="outline" placeholder="Nearby Landmark"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="showOptionalFields">
+
+      <ion-input label="Pincode" label-placement="floating" fill="outline" placeholder="Enter Pincode"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="showOptionalFields">
+
+      <ion-input label="City" label-placement="floating" fill="outline" placeholder="Enter City"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="showOptionalFields">
+
+      <ion-input label="State" label-placement="floating" fill="outline" placeholder="Enter State"></ion-input>
+    </ion-item>
+    <!-- Shipping Address Same as Billing Address -->
+    <ion-item *ngIf="showOptionalFields">
+      <ion-label>Shipping Address</ion-label>
+      <ion-checkbox slot="start" formControlName="shippingSameAsBilling"></ion-checkbox>
+    </ion-item>
+
+    <!-- Use safe navigation operator (?) for partyType.value -->
+    <ion-button expand="full" (click)="addParty()">ADD {{ partyType?.value }}</ion-button>
+  </form>
+</ion-content>

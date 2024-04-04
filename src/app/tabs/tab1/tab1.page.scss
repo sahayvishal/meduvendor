@@ -1,0 +1,21 @@
+.icon-cards-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.icon-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon-card ion-icon {
+    font-size: 48px;
+}
+
+.icon-card p {
+    margin-top: 10px;
+    text-align: center;
+}

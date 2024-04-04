@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Ionic Angular App
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Three Ion Cards in one line -->
+  <ion-row>
+    <ion-col size="4">
+      <ion-card>
+        <ion-card-header>
+          Card 1
+        </ion-card-header>
+        <ion-card-content>
+          Content for Card 1
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+    <ion-col size="4">
+      <ion-card>
+        <ion-card-header>
+          Card 2
+        </ion-card-header>
+        <ion-card-content>
+          Content for Card 2
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+    <ion-col size="4">
+      <ion-card>
+        <ion-card-header>
+          Card 3
+        </ion-card-header>
+        <ion-card-content>
+          Content for Card 3
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+  <!-- One Ion Card below the three cards -->
+  <ion-card>
+    <ion-card-header>
+      Additional Card
+    </ion-card-header>
+    <ion-card-content>
+      Content for Additional Card
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Ion Segment to switch between Sale, Purchase, and Expense -->
+  <ion-segment [(ngModel)]="segmentModel">
+    <ion-segment-button value="sale">
+      Sale
+    </ion-segment-button>
+    <ion-segment-button value="purchase">
+      Purchase
+    </ion-segment-button>
+    <ion-segment-button value="expense">
+      Expense
+    </ion-segment-button>
+  </ion-segment>
+
+  <!-- Floating buttons for adding bill, purchase, and expense -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button *ngIf="segmentModel === 'sale'" (click)="addBill()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button *ngIf="segmentModel === 'purchase'" (click)="addPurchase()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button *ngIf="segmentModel === 'expense'" (click)="addExpense()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

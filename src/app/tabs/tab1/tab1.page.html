@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar class="header-bg">
+    <ion-buttons slot="start">
+      <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Manage Members & Address</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-segment value="default" (ionChange)="segmentChanged($event)">
+    <ion-segment-button value="default">
+      <ion-label>CUSTOMERS</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="segment">
+      <ion-label>SUPPLIER</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="others" (click)="showOthers()">
+      <ion-label>ADD STAFF</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <div *ngIf="loaded">
+    <div class="patient-list" *ngIf="segment === 'default' && !showingOthers">
+      <!-- Your existing code for displaying Members -->
+      <div class="icon-cards-container">
+        <!-- First Icon Card -->
+        <div class="icon-card">
+          <ion-icon name="gift-outline"></ion-icon>
+          <p>You will give </p>
+        </div>
+        <!-- Second Icon Card -->
+        <div class="icon-card">
+          <ion-icon name="cash-outline"></ion-icon>
+          <p>You will get </p>
+        </div>
+        <!-- Third Icon Card -->
+        <div class="icon-card">
+          <ion-icon name="cloud-upload-outline"></ion-icon>
+          <p>Online Collection</p>
+        </div>
+      </div>
+    </div>
+    <div class="patient-list" *ngIf="segment === 'segment' && !showingOthers">
+      <!-- Your existing code for displaying Addresses -->
+      <div class="icon-cards-container">
+        <!-- First Icon Card -->
+        <div class="icon-card">
+          <ion-icon name="gift-outline"></ion-icon>
+          <p>You will give </p>
+        </div>
+        <!-- Second Icon Card -->
+        <div class="icon-card">
+          <ion-icon name="cash-outline"></ion-icon>
+          <p>You will get </p>
+        </div>
+        <!-- Third Icon Card -->
+        <div class="icon-card">
+          <ion-icon name="bar-chart-outline"></ion-icon>
+          <p>View Report</p>
+        </div>
+      </div>
+    </div>
+    <div class="other-list" *ngIf="showingOthers">
+      <!-- Add your code for displaying "Others" content here -->
+      <h2>Other Content Goes Here</h2>
+    </div>
+
+    <!-- Floating Action Button (Add Customer) -->
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="segment === 'default'">
+      <ion-fab-button (click)="addCustomer()">
+        <ion-icon name="person-add-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+    <!-- Floating Action Button (Add Supplier) -->
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="segment === 'segment'">
+      <ion-fab-button (click)="addSupplier()">
+        <ion-icon name="people-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </div>
+</ion-content>
